@@ -14,10 +14,10 @@ def extract_text_and_images_from_pdf(pdf_file, output_file=None):
             text += page.extract_text()
 
     # Extract images using pdf2image
-    images = convert_from_path(pdf_file,poppler_path=r'C:\Users\X\Desktop\poppler-24.02.0\Library\bin') #poppler path'i gösteriyorsun
+    images = convert_from_path(pdf_file,poppler_path=r'C:\PATH TO POPPLER\poppler-24.02.0\Library\bin') # POPPLER FOR WINDOWS BIN PATH
 
     # Extract text from images using OCR
-    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe'       #tesseract path'i gösteriyorsun
+    pytesseract.pytesseract.tesseract_cmd = r'C:\PATH TO TESSERACT\Tesseract-OCR\tesseract.exe'       # TESSERACT-OCR FOR WINDOWS PATH
     image_texts = []
     for image in images:
         image_text = pytesseract.image_to_string(image)
